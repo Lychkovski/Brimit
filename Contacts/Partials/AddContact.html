@@ -1,0 +1,43 @@
+﻿<div style="margin-left: 30px; width: 300px;">
+    <h3>Add Contact</h3>
+    <br/>
+
+    <form name="AddContactForm" ng-submit="AddContact();">
+        <div class="form-group">
+            <label for="contact.FirstName">First name</label>
+            <input type="text" name="FirstName" ng-model="contact.FirstName" class="form-control" required="" />
+            <span style="color:red" ng-show="AddContactForm.FirstName.$dirty && AddContactForm.FirstName.$invalid">
+                <span ng-show="AddContactForm.FirstName.$error.required">Username is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="contact.LastName">Last name</label>
+            <input type="text" name="LastName" ng-model="contact.LastName" class="form-control" required="" />
+            <span style="color:red" ng-show="AddContactForm.LastName.$dirty && AddContactForm.LastName.$invalid">
+                <span ng-show="AddContactForm.LastName.$error.required">Username is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="contact.Email">Email address</label>
+            <!--<input type="email" ng-model="contact.Email" class="form-control" required="" />-->
+            <input type="email" name="Email" ng-model="contact.Email" class="form-control" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required="" />
+            <span style="color:red" ng-show="AddContactForm.Email.$dirty && AddContactForm.Email.$invalid">
+                <span ng-show="AddContactForm.Email.$error.required">Email is required.</span>
+                <span ng-show="AddContactForm.Email.$error.email">Invalid email address.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="contact.TelephoneNumber">Telephone number</label>
+            <input type="text" name="TelephoneNumber" ng-model="contact.TelephoneNumber" class="form-control" required="" />
+            <span style="color:red" ng-show="AddContactForm.TelephoneNumber.$dirty && AddContactForm.TelephoneNumber.$invalid">
+                <span ng-show="AddContactForm.TelephoneNumber.$error.required">Username is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success" ng-disabled="AddContactForm.$invalid"  />
+        </div>
+    </form>
+    
+    <br/>
+    <a href="#" class="btn btn-primary">Back to Contacts</a>
+</div>

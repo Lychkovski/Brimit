@@ -1,0 +1,23 @@
+﻿<div style="margin-left: 30px; width: 500px;"> 
+    <h3>Contacts List</h3>
+    <div ng-show="contactAdded" class="alert alert-success" role="alert">Contact save successfully!</div>
+    
+    <a href="#/AddContact" class="btn btn-primary">Add Contact</a>
+    <br/>
+    <br/>
+
+    <table class="table table-bordered">
+        <tr>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Email address</td>
+            <td>Telephone number</td>
+        </tr>
+        <tr ng-repeat="contact in listContacts">
+            <td>{{contact.FirstName}}</td>
+            <td>{{contact.LastName}}</td>
+            <td>{{contact.Email}}</td>
+            <td>{{contact.TelephoneNumber}}</td>
+        </tr>
+    </table>
+</div>
